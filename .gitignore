@@ -211,5 +211,5 @@ __marimo__/
 
 
 # Project
-GeoLite2-City.mmdb
-saida_enriquecida.csv
+GeoLocation/GeoLite2-City.mmdb
+Data/saida_enriquecida.csv
