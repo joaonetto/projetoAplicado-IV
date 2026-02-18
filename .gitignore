@@ -213,3 +213,5 @@ __marimo__/
 # Project
 GeoLocation/GeoLite2-City.mmdb
 Data/saida_enriquecida.csv
+Data/modelo.csv
+Data/modelo2.csv
