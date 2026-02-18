@@ -208,3 +208,8 @@ __marimo__/
 
 # MacOSX
 .DS_Store
+
+
+# Project
+GeoLite2-City.mmdb
+saida_enriquecida.csv
