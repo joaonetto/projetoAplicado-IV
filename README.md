@@ -66,4 +66,28 @@ Nesse contexto, é importante destacar que uma conta comprometida pode, em quest
 
 ## Enriquecimento de dados
 
+Os dados de logs são especialmente ricos para análises de **séries temporais**, pois registram cada instante em que um usuário tenta acessar o método de autenticação do Google. Vale destacar que esse processo também contempla aplicativos integrados via **SSO** (*Single Sign-On*).
+
+Assim, sempre que um usuário acessa o e-mail ou utiliza plataformas federadas, um registro é gerado e armazenado nos logs do Google, e isso ocorre para todos os **usuários**, em todas as **autenticações**.
+
+Diversas informações estão presentes nesses registros, mas algumas são essenciais para os objetivos deste projeto, como:
+- e-mail do usuário;
+- domínio do usuário;
+- evento que originou o log (ex.: login sucesso/falha, logout, entre outros);
+- tipo de autenticação (se ocorreu via Google ou por outra plataforma);
+- endereço IP de origem do acesso;
+- entre outros.
+
+Entretanto, nesse tipo de log disponibilizado pelo Google, **não há geo-localização nativa** do usuário. Para obter essa informação diretamente pela plataforma, seria necessário um licenciamento diferenciado e outros pacotes de serviço. Ainda assim, para este projeto, a **geo-localização é fundamental** para aplicar conceitos como **“Impossible Travel”**, pois a posição geográfica (ou o raio de conexão habitual) permite identificar acessos fora do padrão esperado e gerar alertas de segurança.
+
+Para enriquecer os dados com geo-posicionamento, foram utilizadas duas soluções externas:
+
+- [Max Mind - GeoLite](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data/)
+- [IP Geolocation AP](https://ipgeolocation.io/)
+
+Enquanto a **MaxMind** oferece uma base atualizada para *download* e consumo local, o **IP Geolocation** opera por *API*. Vale ressaltar que, no plano free, o IP Geolocation **limita o uso a 1.000 requisições por dia**.
+
+Para resolver o enriquecimento com geo-posicionamento (latitude e longitude), foi desenvolvido o aplicativo [Enrich Data - IP](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Helpers/02-EnrichData/README.md), que utiliza o **IP** do usuário para consultar tanto a base da **MaxMind** quanto a **IP Geolocation API**.
+
+Devido ao limite diário de requisições do **IP Geolocation**, optamos por utilizá-lo como *fallback*, ou seja, apenas quando a localização não é identificada pela base da **MaxMind**.
 
