@@ -41,7 +41,11 @@ Ao final, espera-se disponibilizar uma solução que demonstre, de forma mensur�
 
 ---
 
-# Pré-fight
+# Helpers
+
+Os *helpers* são aplicativos desenvolvidos para realizar a tratativa inicial e a adequação dos dados antes do uso no projeto principal. Eles podem ser entendidos como componentes de *pre-flight*: etapas fundamentais que preparam, ajustam e validam os dados para que estejam consistentes e aptos ao processamento.
+
+Para este estudo de caso, foi necessário desenvolver *helpers* específicos, pois, sem essas rotinas de preparação (pseudonimização e enriquecimento, entre outras), não haveria dados em condições adequadas para suportar as análises e os objetivos do projeto.
 
 ## Pseudonimização
 
