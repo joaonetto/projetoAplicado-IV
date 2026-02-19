@@ -51,7 +51,7 @@ Para este estudo de caso, foi necessário desenvolver *helpers* específicos, po
 
 Este projeto foi desenvolvido a partir de bases reais, coletadas e analisadas em condições reais de operação. No entanto, devido à sensibilidade das informações envolvidas, foram implementados processos de pseudonimização e enriquecimento dos dados utilizados no projeto, com o objetivo de preservar a privacidade e reduzir riscos de exposição.
 
-Para mais detalhes sobre o processo de pseudonimização adotado, consulte o código em: [Anonymize Data](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Helpers/01-Anonymize/README.md).
+Para mais detalhes sobre o processo de pseudonimização adotado, consulte o código em: [Pseudonymize Data](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Helpers/01-Pseudonymize/README.md).
 
 Também é importante destacar a diferença entre anonimização e pseudonimização, e o motivo de utilizarmos esta última:
 
