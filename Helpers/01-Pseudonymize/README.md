@@ -1,6 +1,6 @@
 # anonymize-data
 
-Script em Python para **anonimizar logs em CSV**, substituindo **e-mails** por identificadores determinísticos e gerando **mapas de usuários e domínios**.
+Script em Python para **pseudonimizar logs em CSV**, substituindo **e-mails** por identificadores determinísticos e gerando **mapas de usuários e domínios**.
 
 ---
 
@@ -13,7 +13,7 @@ Dado um CSV de entrada, o script:
    - `original_email -> USRxxxxxx@<dominio_anon>`
    - `original_domain -> <dominio_anon>`
 3. Grava:
-   - `logs_anon.csv` (CSV original com e-mails substituídos)
+   - `logs_pseudo.csv` (CSV original com e-mails substituídos)
    - `map_users.csv` (tabela: e-mail original, e-mail anon, `user_id`)
    - `map_domains.csv` (tabela: domínio original, domínio anon, passthrough)
 
@@ -31,19 +31,19 @@ Dado um CSV de entrada, o script:
 ### 1) Defina o segredo (obrigatório)
 
 ```bash
-export LOG_ANON_SECRET="uma-chave-super-secreta-e-longa"
+export LOG_PSEUDO_SECRET="uma-chave-super-secreta-e-longa"
 ```
 
 ### 2) Rode o script
 
 ```bash
-python3 anonymize_data_improved.py ./logs.csv
+python3 pseudonymization_data.py ./logs.csv
 ```
 
-Saída padrão: `<pasta_do_csv>/anon_out/`
+Saída padrão: `<pasta_do_csv>/pseudo_out/`
 
 Arquivos gerados:
-- `anon_out/logs_anon.csv`
+- `anon_out/logs_pseudo.csv`
 - `anon_out/map_users.csv`
 - `anon_out/map_domains.csv`
 
@@ -54,19 +54,19 @@ Arquivos gerados:
 ### Especificar diretório de saída
 
 ```bash
-python3 anonymize_data_improved.py ./logs.csv ./saida_anon
+python3 pseudonymization_data.py ./logs.csv ./saida_pseudo
 ```
 
 ### Log em arquivo + nível INFO
 
 ```bash
-python3 anonymize_data_improved.py ./logs.csv ./saida_anon --log-file ./execucao.log --log-level INFO
+python3 pseudonymization_data.py ./logs.csv ./saida_pseudo --log-file ./execucao.log --log-level INFO
 ```
 
 ### Debug (inclui traceback em erros)
 
 ```bash
-python3 anonymize_data_improved.py ./logs.csv --log-level DEBUG
+python3 pseudonymization_data.py ./logs.csv --log-level DEBUG
 ```
 
 ### Somente e-mails (não mexer em domínios soltos)
@@ -76,7 +76,7 @@ Por padrão, o script também pode substituir domínios “soltos” (tokens com
 Se quiser substituir **apenas e-mails completos**:
 
 ```bash
-python3 anonymize_data_improved.py ./logs.csv --no-domain-tokens
+python3 pseudonymization_data.py ./logs.csv --no-domain-tokens
 ```
 
 ---

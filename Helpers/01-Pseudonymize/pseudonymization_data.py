@@ -30,7 +30,7 @@ def hmac_hex(secret: bytes, msg: str) -> str:
 
 
 def setup_logging(level: str, log_file: str | None) -> logging.Logger:
-    logger = logging.getLogger("anonymize_data")
+    logger = logging.getLogger("pseudonymization_data")
     logger.setLevel(logging.DEBUG)
 
     if logger.handlers:
@@ -149,8 +149,8 @@ def build_maps_from_file(in_path: Path, delimiter: str, secret: bytes, logger: l
         if dom in DOMAIN_PASSTHROUGH:
             email_map[e] = f"{uid}@{dom}"
         else:
-            anon_dom = domain_map.get(dom, domain_alias(dom, secret))
-            email_map[e] = f"{uid}@{anon_dom}"
+            pseudo_dom = domain_map.get(dom, domain_alias(dom, secret))
+            email_map[e] = f"{uid}@{pseudo_dom}"
 
     logger.debug("Exemplo (debug) de 3 mapeamentos de e-mail: %s", list(email_map.items())[:3])
     logger.debug("Exemplo (debug) de 3 mapeamentos de domínio: %s", list(domain_map.items())[:3])
@@ -158,7 +158,7 @@ def build_maps_from_file(in_path: Path, delimiter: str, secret: bytes, logger: l
     return email_map, domain_map
 
 
-def anonymize_cell(cell: str, email_map: dict[str, str], domain_map: dict[str, str], replace_domain_tokens: bool) -> str:
+def pseudonymize_cell(cell: str, email_map: dict[str, str], domain_map: dict[str, str], replace_domain_tokens: bool) -> str:
     if not cell:
         return cell
 
@@ -182,15 +182,15 @@ def anonymize_cell(cell: str, email_map: dict[str, str], domain_map: dict[str, s
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Anonimiza e-mails (usuário + domínio) em arquivos CSV de logs, gerando mapas de usuários e domínios.",
+        description="Pseudonimiza e-mails (usuário + domínio) em arquivos CSV de logs, gerando mapas de usuários e domínios.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("input_csv", help="Caminho do CSV de entrada (logs).")
-    p.add_argument("output_dir", nargs="?", default=None, help="Diretório de saída. Se omitido: <pasta_do_arquivo>/anon_out")
-    p.add_argument("--secret-env", default="LOG_ANON_SECRET", help="Nome da variável de ambiente que contém o segredo para HMAC.")
+    p.add_argument("output_dir", nargs="?", default=None, help="Diretório de saída. Se omitido: <pasta_do_arquivo>/pseudo_out")
+    p.add_argument("--secret-env", default="LOG_PSEUDO_SECRET", help="Nome da variável de ambiente que contém o segredo para HMAC.")
     p.add_argument("--log-level", default="INFO", choices=["DEBUG", "INFO", "ERROR"], help="Nível de log.")
     p.add_argument("--log-file", default=None, help="Arquivo de log (opcional). Ex.: ./execucao.log")
-    p.add_argument("--no-domain-tokens", action="store_true", help="Não anonimiza domínios 'soltos' (apenas e-mails completos).")
+    p.add_argument("--no-domain-tokens", action="store_true", help="Não pseudonimiza domínios 'soltos' (apenas e-mails completos).")
     return p.parse_args()
 
 
@@ -200,7 +200,7 @@ def run(args: argparse.Namespace, logger: logging.Logger) -> int:
         logger.error("Arquivo de entrada não encontrado: %s", in_path)
         return 2
 
-    out_dir = Path(args.output_dir).expanduser().resolve() if args.output_dir else (in_path.parent / "anon_out")
+    out_dir = Path(args.output_dir).expanduser().resolve() if args.output_dir else (in_path.parent / "pseudo_out")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     secret_str = os.environ.get(args.secret_env, "")
@@ -213,7 +213,7 @@ def run(args: argparse.Namespace, logger: logging.Logger) -> int:
     delimiter = detect_delimiter(in_path, logger)
     email_map, domain_map = build_maps_from_file(in_path, delimiter, secret, logger)
 
-    out_logs = out_dir / "logs_anon.csv"
+    out_logs = out_dir / "logs_pseudo.csv"
     out_users = out_dir / "map_users.csv"
     out_domains = out_dir / "map_domains.csv"
 
@@ -226,28 +226,28 @@ def run(args: argparse.Namespace, logger: logging.Logger) -> int:
         writer = csv.writer(fout, delimiter=delimiter, lineterminator="\n")
         for row in reader:
             rows_out += 1
-            writer.writerow([anonymize_cell(normalize(c), email_map, domain_map, replace_domain_tokens) for c in row])
+            writer.writerow([pseudonymize_cell(normalize(c), email_map, domain_map, replace_domain_tokens) for c in row])
             if rows_out % 200_000 == 0:
-                logger.info("Escrita em andamento: %d linhas anonimizadas", rows_out)
+                logger.info("Escrita em andamento: %d linhas pseudonimizadas", rows_out)
 
-    logger.info("Logs anonimizados gerados: %s (%d linhas)", out_logs, rows_out)
+    logger.info("Logs pseudonimizados gerados: %s (%d linhas)", out_logs, rows_out)
 
     with out_users.open("w", encoding="utf-8", newline="") as fu:
         w = csv.writer(fu, delimiter=delimiter, lineterminator="\n")
-        w.writerow(["original_email", "anon_email", "user_id"])
+        w.writerow(["original_email", "pseudo_email", "user_id"])
         for original_email in sorted(email_map.keys()):
-            anon_email = email_map[original_email]
-            user_id = anon_email.split("@", 1)[0] if "@" in anon_email else ""
-            w.writerow([original_email, anon_email, user_id])
+            pseudo_email = email_map[original_email]
+            user_id = pseudo_email.split("@", 1)[0] if "@" in pseudo_email else ""
+            w.writerow([original_email, pseudo_email, user_id])
     logger.info("Mapa de usuários gerado: %s (registros=%d)", out_users, len(email_map))
 
     with out_domains.open("w", encoding="utf-8", newline="") as fd:
         w = csv.writer(fd, delimiter=delimiter, lineterminator="\n")
-        w.writerow(["original_domain", "anon_domain", "passthrough"])
+        w.writerow(["original_domain", "pseudo_domain", "passthrough"])
         for original_domain in sorted(domain_map.keys()):
-            anon_domain = domain_map[original_domain]
+            pseudo_domain = domain_map[original_domain]
             passthrough = "true" if original_domain in DOMAIN_PASSTHROUGH else "false"
-            w.writerow([original_domain, anon_domain, passthrough])
+            w.writerow([original_domain, pseudo_domain, passthrough])
     logger.info("Mapa de domínios gerado: %s (registros=%d)", out_domains, len(domain_map))
 
     logger.info("OK! Arquivos gerados em: %s", out_dir)
@@ -259,7 +259,7 @@ def main() -> int:
     args = parse_args()
     logger = setup_logging(args.log_level, args.log_file)
 
-    logger.info("Starting anonymize_data")
+    logger.info("Starting pseudonymization_data")
     logger.info("Python=%s", sys.version.split()[0])
 
     try:
