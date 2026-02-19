@@ -107,7 +107,7 @@ Os principais diretórios são:
 
 ## Cronograma de entregas:
 
-- Etapa 1: Definição do projeto e equipe (01/03)
+- [Etapa 1](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/01/etapa_1.ipynb): Definição do projeto e equipe (01/03)
     - Em desenvolvimento
 - Etapa 2: Referencial Teórico e Cronograma (29/03)
 - Etapa 3: Implementação Parcial (26/04)
