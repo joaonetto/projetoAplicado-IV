@@ -5,10 +5,14 @@
 ### Ciência de Dados
 ### Mackenzie - 2026/1
 
+#### Professor: Gustavo Scalabrini Sampaio
+
 ---
 
-#### 10441670 - João Silveira Campos Netto
-#### 10442968 - Alex Luiz Rabelo
+Alunos:
+
+- 10441670 - João Silveira Campos Netto
+- 10442968 - Alex Luiz Rabelo
 
 ---
 
