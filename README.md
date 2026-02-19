@@ -7,6 +7,8 @@
 
 #### Professor: Gustavo Scalabrini Sampaio
 
+##### Projeto: ChronoSec: Detecção Comportamental e Séries Temporais para Segurança de Login (UEBA) em Eventos Google
+
 ---
 
 Alunos:
