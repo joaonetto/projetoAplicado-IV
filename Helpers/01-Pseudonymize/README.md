@@ -1,4 +1,4 @@
-# anonymize-data
+# Pseudonymization Data
 
 Script em Python para **pseudonimizar logs em CSV**, substituindo **e-mails** por identificadores determinísticos e gerando **mapas de usuários e domínios**.
 
