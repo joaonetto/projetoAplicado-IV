@@ -91,3 +91,30 @@ Para resolver o enriquecimento com geo-posicionamento (latitude e longitude), fo
 
 Devido ao limite diário de requisições do **IP Geolocation**, optamos por utilizá-lo como *fallback*, ou seja, apenas quando a localização não é identificada pela base da **MaxMind**.
 
+---
+
+## Estrutura do projeto
+
+A estrutura de diretórios deste projeto foi organizada para facilitar o entendimento, o uso e, principalmente, a reprodutibilidade dos experimentos.
+
+Os principais diretórios são:
+- Data: contém os arquivos .csv com os dados de entrada do projeto;
+- Helpers: reúne os aplicativos auxiliares responsáveis pela pseudonimização e pelo enriquecimento dos dados;
+- GeoLocation: armazena a base .mmdb da MaxMind utilizada para geolocalização por IP;
+- Etapas: contém o sequenciamento das etapas do projeto, permitindo acompanhar a evolução do trabalho e reproduzir cada fase de forma organizada.
+
+---
+
+## Cronograma de entregas:
+
+- Etapa 1: Definição do projeto e equipe (01/03)
+    - Em desenvolvimento
+- Etapa 2: Referencial Teórico e Cronograma (29/03)
+- Etapa 3: Implementação Parcial (26/04)
+- Etapa 4: Implementação e Entrega Final (31/05)
+
+---
+
+## Licença
+
+Este projeto está sobre a licença [Apache Version 2.0](https://github.com/joaonetto/projetoAplicado-IV/blob/main/LICENSE)
