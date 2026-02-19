@@ -98,10 +98,10 @@ Devido ao limite diário de requisições do **IP Geolocation**, optamos por uti
 A estrutura de diretórios deste projeto foi organizada para facilitar o entendimento, o uso e, principalmente, a reprodutibilidade dos experimentos.
 
 Os principais diretórios são:
-- Data: contém os arquivos .csv com os dados de entrada do projeto;
-- Helpers: reúne os aplicativos auxiliares responsáveis pela pseudonimização e pelo enriquecimento dos dados;
-- GeoLocation: armazena a base .mmdb da MaxMind utilizada para geolocalização por IP;
-- Etapas: contém o sequenciamento das etapas do projeto, permitindo acompanhar a evolução do trabalho e reproduzir cada fase de forma organizada.
+- **Data**: contém os arquivos .csv com os dados de entrada do projeto;
+- **Helpers**: reúne os aplicativos auxiliares responsáveis pela pseudonimização e pelo enriquecimento dos dados;
+- **GeoLocation**: armazena a base .mmdb da MaxMind utilizada para geolocalização por IP;
+- **Etapas**: contém o sequenciamento das etapas do projeto, permitindo acompanhar a evolução do trabalho e reproduzir cada fase de forma organizada.
 
 ---
 
