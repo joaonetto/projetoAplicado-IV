@@ -304,5 +304,4 @@ Use `--ip-col` com o nome correto da coluna no CSV:
 
 - GeoLite2/MMDB possui termos de uso da MaxMind.
 - ipgeolocation.io possui termos e limites conforme o plano.
-
-Use conforme as políticas e requisitos do seu projeto.
+- ChronoSec sobre [Apache Version 2.0](https://github.com/joaonetto/projetoAplicado-IV/blob/main/LICENSE)
