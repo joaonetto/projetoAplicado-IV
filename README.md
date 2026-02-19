@@ -31,7 +31,7 @@ Analise de séries temporais para Cyber Security login process.
 
 # **Objetivo**
 
-Este trabalho tem como objetivo desenvolver um produto analítico baseado em séries temporais para detectar e explicar comportamentos anômalos em processos de login (eventos de autenticação) a partir de dados anonimizados da plataforma Google enriquecidos com geolocalização. A pretensão central é transformar registros brutos de autenticação em informação acionável para Cyber Security, permitindo identificar rapidamente padrões compatíveis com abuso de credenciais, automação maliciosa e tentativas de acesso indevido, com foco em priorização operacional e redução de ruído na investigação.
+Este trabalho tem como objetivo desenvolver um produto analítico baseado em séries temporais para detectar e explicar comportamentos anômalos em processos de login (eventos de autenticação) a partir de dados pseudonimizados da plataforma Google enriquecidos com geolocalização. A pretensão central é transformar registros brutos de autenticação em informação acionável para Cyber Security, permitindo identificar rapidamente padrões compatíveis com abuso de credenciais, automação maliciosa e tentativas de acesso indevido, com foco em priorização operacional e redução de ruído na investigação.
 
 Como metas, o projeto busca:
 1. modelar o comportamento típico de usuários e domínios ao longo do tempo (baseline) e medir desvios relevantes;
