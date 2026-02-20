@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/scalabrinig/cdProjetoAplicadoIV/d093146488f56dfcf0ef286bcee8efe0e71b9c76/figuras/mackenzie_logo.jpg" width="50%"/>
+<img src="https://raw.githubusercontent.com/joaonetto/projetoAplicado-IV/095fb586812dbb24f39e965a325c620448b0552f/Imagem/Mackenzie.jpg" width="50%"/>
 
 # Projeto Aplicado - IV
 
