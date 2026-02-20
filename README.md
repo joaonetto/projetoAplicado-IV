@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/joaonetto/projetoAplicado-IV/refs/heads/main/Imagem/Mackenzie.png" width="25%"/>
+<img src="https://raw.githubusercontent.com/joaonetto/projetoAplicado-IV/refs/heads/main/Images/Mackenzie.png" width="25%"/>
 
 # Projeto Aplicado - IV
 
