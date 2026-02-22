@@ -15,14 +15,14 @@ Alunos:
 
 - 10441670 - João Silveira Campos Netto
 - 10442968 - Alex Luiz Rabelo
-
+- 10433799 - Antônio Henrique Caldas Mello
 ---
 
 ## Introdução
 
 Processos de autenticação geram sinais ricos para segurança: falhas repetidas, desafios de MFA, mudanças de localização e padrões de horário. Em cenários de credenciais comprometidas, ataques automatizados e abuso de sessão, esses sinais costumam aparecer como anomalias temporais e comportamentais — muitas vezes antes de um incidente maior.
 
-Este projeto propõe um produto analítico, implementado em Jupyter Notebooks, para explorar dados de login (anonimizados) provenientes da plataforma Google e aplicar técnicas de Séries Temporais e UEBA (User and Entity Behavior Analytics) para identificar desvios relevantes, como “Impossible Travel”, picos de frequência, sequências incomuns de eventos e mudanças no padrão de horário. A proposta combina regras explicáveis e modelos de aprendizado de máquina, com foco em reprodutibilidade e comunicação clara para um cliente (SOC/IAM).
+Este projeto propõe um produto analítico, implementado em Jupyter Notebooks, para explorar dados de login (pseudonimização) provenientes da plataforma Google e aplicar técnicas de Séries Temporais e UEBA (User and Entity Behavior Analytics) para identificar desvios relevantes, como “Impossible Travel”, picos de frequência, sequências incomuns de eventos e mudanças no padrão de horário. A proposta combina regras explicáveis e modelos de aprendizado de máquina, com foco em reprodutibilidade e comunicação clara para um cliente (SOC/IAM).
 
 UEBA é uma abordagem consolidada para detectar comportamentos anormais de usuários e entidades usando análises comportamentais e ML.
 Analise de séries temporais para Cyber Security login process.
@@ -110,9 +110,12 @@ Os principais diretórios são:
 ## Cronograma de entregas:
 
 - [Etapa 1](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/01/etapa_1.ipynb): Definição do projeto e equipe (01/03)
-    - Em desenvolvimento
+    - Finalizado em 20/02
 - Etapa 2: Referencial Teórico e Cronograma (29/03)
-- Etapa 3: Implementação Parcial (26/04)
+  - Em Desenvolvimento
+- [Etapa 3](https://github.com/joaonetto/projetoAplicado-IV/tree/main/Etapas/03): Implementação Parcial (26/04)
+  - **Velocity Check**: Finalizado em 21/02
+  - **User Behavior Analysis**: Em Desenvolvimento
 - Etapa 4: Implementação e Entrega Final (31/05)
 
 ---
