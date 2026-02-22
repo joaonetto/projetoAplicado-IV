@@ -110,12 +110,12 @@ Os principais diretórios são:
 ## Cronograma de entregas:
 
 - [Etapa 1](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/01/etapa_1.ipynb): Definição do projeto e equipe (01/03)
-    - Finalizado em 20/02
+    - Finalizado em 20/02 ✅
 - Etapa 2: Referencial Teórico e Cronograma (29/03)
-  - Em Desenvolvimento
+  - Em Desenvolvimento ❌
 - [Etapa 3](https://github.com/joaonetto/projetoAplicado-IV/tree/main/Etapas/03): Implementação Parcial (26/04)
-  - [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-VelocityChecks.ipynb): Finalizado em 21/02
-  - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-UserBehaviourAnalysis.ipynb): Em Desenvolvimento
+  - [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-VelocityChecks.ipynb): Finalizado em 21/02 ✅
+  - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-UserBehaviourAnalysis.ipynb): Em Desenvolvimento ❌
 - Etapa 4: Implementação e Entrega Final (31/05)
 
 ---
