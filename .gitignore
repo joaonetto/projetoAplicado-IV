@@ -215,4 +215,5 @@ Data/saida_enriquecida.csv
 Data/modelo.csv
 Data/modelo2.csv
 Etapas/03/*.csv
+notebook/*.csv
 GeoLocation/GeoLite2-City.mmdb

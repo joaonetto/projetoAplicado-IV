@@ -101,9 +101,9 @@ A estrutura de diretórios deste projeto foi organizada para facilitar o entendi
 
 Os principais diretórios são:
 - **Data**: contém os arquivos .csv com os dados de entrada do projeto;
-- **Helpers**: reúne os aplicativos auxiliares responsáveis pela pseudonimização e pelo enriquecimento dos dados;
 - **GeoLocation**: armazena a base .mmdb da MaxMind utilizada para geolocalização por IP;
-- **Etapas**: contém o sequenciamento das etapas do projeto, permitindo acompanhar a evolução do trabalho e reproduzir cada fase de forma organizada.
+- **Helpers**: reúne os aplicativos auxiliares responsáveis pela pseudonimização e pelo enriquecimento dos dados;
+- **notebook**: contém os arquivos Jupyter Notebook desenvolvidos como as etapas do projeto, permitindo acompanhar a evolução do trabalho e reproduzir cada fase de forma organizada.
 
 ---
 
@@ -115,7 +115,8 @@ Os principais diretórios são:
   - Em Desenvolvimento ❌
 - [Etapa 3](https://github.com/joaonetto/projetoAplicado-IV/tree/main/Etapas/03): Implementação Parcial (26/04)
   - [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-VelocityChecks.ipynb): Finalizado em 21/02 ✅
-  - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-UserBehaviourAnalysis.ipynb): Em Desenvolvimento ❌
+  - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-UserBehaviourAnalysis.ipynb): Finalizado em 25/02 ✅
+  - [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/Etapas/03/etapa_3-ImpossibleTravel.ipynb): Em Desenvolvimento ❌
 - Etapa 4: Implementação e Entrega Final (31/05)
 
 ---
