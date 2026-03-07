@@ -110,13 +110,13 @@ Os principais diretórios são:
 ## Cronograma de entregas:
 
 - [Etapa 1](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb): Definição do projeto e equipe (01/03)
-    - Finalizado em 20/02 ✅
+    - Finalizado em 20 fev. 2026 ✅
 - Etapa 2: Referencial Teórico e Cronograma (29/03)
   - Em Desenvolvimento ❌
 - [Etapa 3](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb): Implementação Parcial (26/04)
-  - [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-VelocityChecks.ipynb): Finalizado em 21/02 ✅
-  - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb): Finalizado em 25/02 ✅
-  - [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb): Em Desenvolvimento ❌
+  - [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-VelocityChecks.ipynb): Finalizado em 21 fev. 2026 ✅
+  - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb): Finalizado em 25 fev. 2026 ✅
+  - [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb): Finalizado em 07 mar. 2026 ✅
 - Etapa 4: Implementação e Entrega Final (31/05)
 
 ---
