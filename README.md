@@ -111,7 +111,7 @@ Os principais diretórios são:
 
 - [Etapa 1](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb): Definição do projeto e equipe (01/03)
   - Finalizado em 20 fev. 2026 ✅
-- Etapa 2: Referencial Teórico e Cronograma (29/03)
+- [Etapa 2](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb): Referencial Teórico e Cronograma (29/03)
   - Finalizado em 28 mar. 2026 ✅
 - [Etapa 3](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb): Implementação Final (26/04)
   - [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-VelocityChecks.ipynb): Finalizado em 21 fev. 2026 ✅
