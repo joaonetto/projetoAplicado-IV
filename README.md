@@ -29,7 +29,7 @@ Analise de séries temporais para Cyber Security login process.
 
 ---
 
-# **Objetivo**
+##  **Objetivo**
 
 Este trabalho tem como objetivo desenvolver um produto analítico baseado em séries temporais para detectar e explicar comportamentos anômalos em processos de login (eventos de autenticação) a partir de dados pseudonimizados da plataforma Google enriquecidos com geolocalização. A pretensão central é transformar registros brutos de autenticação em informação acionável para Cyber Security, permitindo identificar rapidamente padrões compatíveis com abuso de credenciais, automação maliciosa e tentativas de acesso indevido, com foco em priorização operacional e redução de ruído na investigação.
 
@@ -43,13 +43,27 @@ Ao final, espera-se disponibilizar uma solução que demonstre, de forma mensur�
 
 ---
 
-# Helpers
+## Projeto ChronoSec
+
+Este projeto tem como objetivo analisar eventos de autenticação como fonte estratégica para a identificação de comportamentos anômalos no contexto da segurança da informação. Considerando que processos de _login_ concentram sinais relevantes sobre o padrão de acesso de usuários e entidades, a proposta explora dados pseudonimizados provenientes da plataforma Google com o propósito de detectar desvios que possam indicar comprometimento de credenciais, uso indevido de contas ou tentativas automatizadas de acesso.
+
+A pesquisa adota uma abordagem analítica baseada em **Séries Temporais** e em conceitos de **User and Entity Behavior Analytics** (UEBA), combinando regras explicáveis e técnicas de aprendizado de máquina para ampliar a capacidade de detecção, sem comprometer a interpretabilidade dos resultados. Entre os fenômenos investigados, destacam-se alterações incomuns no padrão temporal de autenticação, picos anormais de frequência e situações de **Impossible Travel**, nas quais um mesmo usuário aparenta autenticar-se em locais geograficamente incompatíveis com o intervalo de tempo observado.
+
+Com o intuito de aprofundar a compreensão metodológica e favorecer a aplicação prática dos resultados, o projeto foi estruturado em três frentes analíticas complementares: [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-VelocityChecks.ipynb), voltada à análise da frequência e velocidade das tentativas de autenticação; [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb), direcionada à investigação de desvios no comportamento temporal do usuário após o acesso; e [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb), dedicada à identificação de deslocamentos geográficos improváveis. Embora todas incidam sobre o mesmo evento de origem, cada frente observa dimensões específicas do problema e, por isso, foi desenvolvida em _notebooks_ independentes.
+
+Como resultado, o projeto busca oferecer um produto analítico reprodutível, interpretável e aplicável a contextos operacionais, contribuindo para apoiar equipes de **Security Operations Center** (SOC) e **Identity and Access Management** (IAM) na identificação precoce de riscos e no fortalecimento dos mecanismos de proteção de identidades no ambiente corporativo.
+
+Para uma compreensão adequada deste projeto e de seus componentes fundamentais, recomenda-se iniciar a análise pelo notebook [ChronoSec](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb) uma vez que esse material apresenta, de forma estruturada e pertinente, os principais motivadores da pesquisa, bem como as conexões estabelecidas entre seus diferentes eixos analíticos ao longo do desenvolvimento do projeto.
+
+---
+
+## Helpers
 
 Os *helpers* são aplicativos desenvolvidos para realizar a tratativa inicial e a adequação dos dados antes do uso no projeto principal. Eles podem ser entendidos como componentes de *pre-flight*: etapas fundamentais que preparam, ajustam e validam os dados para que estejam consistentes e aptos ao processamento.
 
 Para este estudo de caso, foi necessário desenvolver *helpers* específicos, pois, sem essas rotinas de preparação (pseudonimização e enriquecimento, entre outras), não haveria dados em condições adequadas para suportar as análises e os objetivos do projeto.
 
-## Pseudonimização
+### Pseudonimização
 
 Este projeto foi desenvolvido a partir de bases reais, coletadas e analisadas em condições reais de operação. No entanto, devido à sensibilidade das informações envolvidas, foram implementados processos de pseudonimização e enriquecimento dos dados utilizados no projeto, com o objetivo de preservar a privacidade e reduzir riscos de exposição.
 
@@ -66,7 +80,7 @@ Em um cenário real de operações de **Cyber Security**, esses dados normalment
 
 Nesse contexto, é importante destacar que uma conta comprometida pode, em questão de minutos, ser utilizada para escalonamento de privilégios, movimentação lateral e acesso a áreas restritas, ampliando rapidamente o impacto do incidente e colocando em risco informações sensíveis e, potencialmente, toda a corporação.
 
-## Enriquecimento de dados
+### Enriquecimento de dados
 
 Os dados de logs são especialmente ricos para análises de **séries temporais**, pois registram cada instante em que um usuário tenta acessar o método de autenticação do Google. Vale destacar que esse processo também contempla aplicativos integrados via **SSO** (*Single Sign-On*).
 
@@ -104,20 +118,6 @@ Os principais diretórios são:
 - **GeoLocation**: armazena a base .mmdb da MaxMind utilizada para geolocalização por IP;
 - **Helpers**: reúne os aplicativos auxiliares responsáveis pela pseudonimização e pelo enriquecimento dos dados;
 - **notebook**: contém os arquivos Jupyter Notebook desenvolvidos como as etapas do projeto, permitindo acompanhar a evolução do trabalho e reproduzir cada fase de forma organizada.
-
----
-
-## Projeto ChronoSec
-
-Este projeto tem como objetivo analisar eventos de autenticação como fonte estratégica para a identificação de comportamentos anômalos no contexto da segurança da informação. Considerando que processos de _login_ concentram sinais relevantes sobre o padrão de acesso de usuários e entidades, a proposta explora dados pseudonimizados provenientes da plataforma Google com o propósito de detectar desvios que possam indicar comprometimento de credenciais, uso indevido de contas ou tentativas automatizadas de acesso.
-
-A pesquisa adota uma abordagem analítica baseada em **Séries Temporais** e em conceitos de **User and Entity Behavior Analytics** (UEBA), combinando regras explicáveis e técnicas de aprendizado de máquina para ampliar a capacidade de detecção, sem comprometer a interpretabilidade dos resultados. Entre os fenômenos investigados, destacam-se alterações incomuns no padrão temporal de autenticação, picos anormais de frequência e situações de **Impossible Travel**, nas quais um mesmo usuário aparenta autenticar-se em locais geograficamente incompatíveis com o intervalo de tempo observado.
-
-Com o intuito de aprofundar a compreensão metodológica e favorecer a aplicação prática dos resultados, o projeto foi estruturado em três frentes analíticas complementares: [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-VelocityChecks.ipynb), voltada à análise da frequência e velocidade das tentativas de autenticação; [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb), direcionada à investigação de desvios no comportamento temporal do usuário após o acesso; e [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb), dedicada à identificação de deslocamentos geográficos improváveis. Embora todas incidam sobre o mesmo evento de origem, cada frente observa dimensões específicas do problema e, por isso, foi desenvolvida em _notebooks_ independentes.
-
-Como resultado, o projeto busca oferecer um produto analítico reprodutível, interpretável e aplicável a contextos operacionais, contribuindo para apoiar equipes de **Security Operations Center** (SOC) e **Identity and Access Management** (IAM) na identificação precoce de riscos e no fortalecimento dos mecanismos de proteção de identidades no ambiente corporativo.
-
-Para uma compreensão adequada deste projeto e de seus componentes fundamentais, recomenda-se iniciar a análise pelo notebook [ChronoSec](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb) uma vez que esse material apresenta, de forma estruturada e pertinente, os principais motivadores da pesquisa, bem como as conexões estabelecidas entre seus diferentes eixos analíticos ao longo do desenvolvimento do projeto.
 
 ---
 
