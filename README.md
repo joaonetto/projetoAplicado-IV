@@ -107,6 +107,20 @@ Os principais diretórios são:
 
 ---
 
+## Projeto ChronoSec
+
+Este projeto tem como objetivo analisar eventos de autenticação como fonte estratégica para a identificação de comportamentos anômalos no contexto da segurança da informação. Considerando que processos de _login_ concentram sinais relevantes sobre o padrão de acesso de usuários e entidades, a proposta explora dados pseudonimizados provenientes da plataforma Google com o propósito de detectar desvios que possam indicar comprometimento de credenciais, uso indevido de contas ou tentativas automatizadas de acesso.
+
+A pesquisa adota uma abordagem analítica baseada em **Séries Temporais** e em conceitos de **User and Entity Behavior Analytics** (UEBA), combinando regras explicáveis e técnicas de aprendizado de máquina para ampliar a capacidade de detecção, sem comprometer a interpretabilidade dos resultados. Entre os fenômenos investigados, destacam-se alterações incomuns no padrão temporal de autenticação, picos anormais de frequência e situações de **Impossible Travel**, nas quais um mesmo usuário aparenta autenticar-se em locais geograficamente incompatíveis com o intervalo de tempo observado.
+
+Com o intuito de aprofundar a compreensão metodológica e favorecer a aplicação prática dos resultados, o projeto foi estruturado em três frentes analíticas complementares: [**Velocity Check**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-VelocityChecks.ipynb), voltada à análise da frequência e velocidade das tentativas de autenticação; [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb), direcionada à investigação de desvios no comportamento temporal do usuário após o acesso; e [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb), dedicada à identificação de deslocamentos geográficos improváveis. Embora todas incidam sobre o mesmo evento de origem, cada frente observa dimensões específicas do problema e, por isso, foi desenvolvida em _notebooks_ independentes.
+
+Como resultado, o projeto busca oferecer um produto analítico reprodutível, interpretável e aplicável a contextos operacionais, contribuindo para apoiar equipes de **Security Operations Center** (SOC) e **Identity and Access Management** (IAM) na identificação precoce de riscos e no fortalecimento dos mecanismos de proteção de identidades no ambiente corporativo.
+
+Para uma compreensão adequada deste projeto e de seus componentes fundamentais, recomenda-se iniciar a análise pelo notebook [ChronoSec](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb) uma vez que esse material apresenta, de forma estruturada e pertinente, os principais motivadores da pesquisa, bem como as conexões estabelecidas entre seus diferentes eixos analíticos ao longo do desenvolvimento do projeto.
+
+---
+
 ## Cronograma de entregas:
 
 - [Etapa 1](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/ChronoSec.ipynb): Definição do projeto e equipe (01/03)
@@ -118,6 +132,9 @@ Os principais diretórios são:
   - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb): Finalizado em 25 fev. 2026 ✅
   - [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb): Finalizado em 07 mar. 2026 ✅
 - Etapa 4: Implementação e Entrega Final (31/05)
+
+### Revisões:
+- 19/04/2026: realização de ajustes nas referências técnicas, revisão da correlação entre os descritivos intercambiáveis entre as páginas e aprimoramento das descrições das figuras.
 
 ---
 
