@@ -137,7 +137,7 @@ Os principais diretórios são:
 ### Revisões:
 - 19/04/2026: realização de ajustes nas referências técnicas, revisão da correlação entre os descritivos intercambiáveis entre as páginas e aprimoramento das descrições das figuras.
 - 27/05/2026: inclusão de casos de uso para os modelos na página principal do ChronoSec
-
+- 28/05/2026: reescrita nos notebooks **User Behaviour Analysis** e **Impossible Travel** para incluir ajustes no modelo LSTM.
 
 ---
 
