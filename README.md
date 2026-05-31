@@ -132,12 +132,14 @@ Os principais diretórios são:
   - [**User Behavior Analysis**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-UserBehaviourAnalysis.ipynb): Finalizado em 25 fev. 2026 ✅
   - [**Impossible Travel**](https://github.com/joaonetto/projetoAplicado-IV/blob/main/notebook/project-ImpossibleTravel.ipynb): Finalizado em 07 mar. 2026 ✅
 - Etapa 4: Implementação e Entrega Final (31/05)
-  - Finalizado em 28 mai. 2026 ✅
+  - [**Assista uma apresentação deste projeto**](): Finalizado em 30 mai. 2026 ✅
+  - [![Assista uma apresentação deste projet](https://img.youtube.com/vi/0wzLaF4ErVE/0.jpg)](https://www.youtube.com/watch?v=0wzLaF4ErVE)
 
 ### Revisões:
 - 19/04/2026: realização de ajustes nas referências técnicas, revisão da correlação entre os descritivos intercambiáveis entre as páginas e aprimoramento das descrições das figuras.
 - 27/05/2026: inclusão de casos de uso para os modelos na página principal do ChronoSec
 - 28/05/2026: reescrita nos notebooks **User Behaviour Analysis** e **Impossible Travel** para incluir ajustes no modelo LSTM.
+- 30/05/2026: publicação do vídeo no Youtube.
 
 ---
 
